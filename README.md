@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Communication with backend
+The frontend communicates with the backend using Web API. Instead of manually crafting all requests, a generated client will be used. NSwag is used to generate such a client. The NSwag tool has been installed as a developer dependency.
+
+jHipster is alrerady serving an Open API on 'http://127.0.0.1:8080/admin/docs' from which a client can be generated.
+From the root of the repository, run `./node_modules/.bin/nswag openapi2tsclient /input:http://127.0.0.1:8080/v3/api-docs/springdocDefault /output:src/app/client/VBMP.ts`
+  
