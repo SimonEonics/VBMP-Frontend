@@ -5,6 +5,11 @@
     "outDir": "./out-tsc/app",
     "types": []
   },
+  "paths":{
+    "@api" : ["src/app/client"],
+    "@environment/*": ["src/environments/*"],
+    "@core/*": ["src/app/core/*"]
+  },
   "files": [
     "src/main.ts"
   ],

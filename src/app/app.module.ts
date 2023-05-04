@@ -14,6 +14,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from '@core/core.module';
 
 
 
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     FormsModule,
     BrowserModule,
+    CoreModule,
     BrowserAnimationsModule,
     MatButtonModule,
     AppRoutingModule,MatFormFieldModule,MatInputModule,MatToolbarModule,MatIconModule,HttpClientModule
