@@ -15,6 +15,7 @@ import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from '@core/core.module';
+import {NgxWebstorageModule} from 'ngx-webstorage';
 
 
 
@@ -27,12 +28,18 @@ import { CoreModule } from '@core/core.module';
     LoginComponent
   ],
   imports: [
-    FormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     CoreModule,
-    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
     MatButtonModule,
-    AppRoutingModule,MatFormFieldModule,MatInputModule,MatToolbarModule,MatIconModule,HttpClientModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatToolbarModule,
+    NgxWebstorageModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
