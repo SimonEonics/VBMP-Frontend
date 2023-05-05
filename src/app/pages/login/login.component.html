@@ -1,34 +1,45 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3" style="margin-top: 20px">
+      <div class="container text-center">
+        <img src="../../../assets/logo1.png" />
+      </div>
+      <h1 class="text-center">Login</h1>
 
-    <div  class="row">
+      <form (ngSubmit)="onLogin()">
+        <!--UserName-->
+        <em *ngIf="!loginSuccessful" class="error"
+          >Invalid username and password combination</em
+        >
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> User Name</mat-label>
+          <input
+            [(ngModel)]="username"
+            name="username"
+            matInput
+            placeholder="Enter here"
+          />
+        </mat-form-field>
 
-        <div class="col-md-6 offset-md-3" style="margin-top: 20px;">
-            <div class="container text-center" >
-                <img src="../../../assets/logo1.png"/>
-            </div>
-           <h1 class="text-center">Login</h1>
+        <!--Password-->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label> Password</mat-label>
+          <input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            matInput
+            placeholder="Enter here"
+          />
+        </mat-form-field>
 
-            <form (ngSubmit)="onLogin()">
-                <!--UserName-->
-                <mat-form-field   class ="full-width" appearance="outline">
-                    <mat-label> User Name</mat-label>
-                    <input  [(ngModel)] = "username"  name ="username" matInput placeholder="Enter here">
-                  </mat-form-field>
-
-                  <!--Password-->
-                <mat-form-field   class ="full-width" appearance="outline">
-                    <mat-label> Password</mat-label>
-                    <input  [(ngModel)] = "password"  name ="password"  type ="password" matInput placeholder="Enter here">
-                  </mat-form-field>
-
-                  <div class="container">
-                    <button mat-raised-button color="primary" type="submit">Login</button>
-                    <button mat-raised-button color="warn" style="margin-left: 10px;">Reset</button>
-
-                  </div>
-            </form>
+        <div class="container">
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          <button mat-raised-button color="warn" style="margin-left: 10px">
+            Reset
+          </button>
         </div>
-
+      </form>
     </div>
-
+  </div>
 </div>
