@@ -14,7 +14,7 @@ import { catchError, exhaustMap, map, of, switchMap, tap } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthorizationService {
+export class AuthService {
   constructor(
     private readonly userJwtController: UserJwtControllerService,
     private readonly accountResource: AccountResourceService,

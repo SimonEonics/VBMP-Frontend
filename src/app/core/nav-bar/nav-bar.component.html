@@ -5,10 +5,17 @@
     <div class="navbar-header navbar-right">
       <ul class="nav navbar-nav">
         <li>
-          <a *ngIf="!isLoggedIn" [routerLink]="['/login']">Login</a>
+          <div *ngIf="!isLoggedIn">
+            <a [routerLink]="['/signup']"> Signup </a>
+            <a [routerLink]="['/account/login']"> Login </a>
+          </div>
         </li>
-
-        <li *ngIf="isLoggedIn">{{ firstName }}</li>
+        <li>
+          <div *ngIf="isLoggedIn">
+            <a routerLink="['/profile']"></a>
+            <li *ngIf="isLoggedIn">{{ firstName }}</li>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

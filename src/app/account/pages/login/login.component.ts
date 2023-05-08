@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthorizationService } from '../../core/services';
+import { AuthService } from '@core/index';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   loginSuccessful: boolean = true;
 
   constructor(
-    private authService: AuthorizationService,
+    private authService: AuthService,
     private readonly router: Router
   ) {}
   ngOnInit(): void {}

@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, withDebugTracing } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
-    path: 'signup',
-    component: SignupComponent,
-    pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    pathMatch: 'full',
+    //Lazy loading of account module.
+    //Since user can retain tokens for several days,
+    //it's not assumed that the user will log in frequently hence the login page is in the account module
+    path: 'account',
+    loadChildren: () =>
+      import('./account/account.module').then((x) => x.AccountModule),
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
