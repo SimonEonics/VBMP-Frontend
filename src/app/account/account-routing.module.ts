@@ -11,13 +11,17 @@ const routes: Routes = [
   {
     path: '',
     component: AccountOverviewComponent,
-    canActivate: [loggedInGuard],
+    //canActivate: [loggedInGuard],
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
+    ],
   },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  { path: 'signup', component: SignupComponent },
+  // {
+  //   path: 'login',
+  //   component: LoginComponent,
+  // },
+  // { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({

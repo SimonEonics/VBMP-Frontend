@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, withDebugTracing } from '@angular/router';
+import { loggedInGuard } from './core';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'about', pathMatch: 'full' },
+
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((x) => x.AboutModule),
+  },
   {
     //Lazy loading of account module.
     //Since user can retain tokens for several days,
@@ -9,6 +17,12 @@ const routes: Routes = [
     path: 'account',
     loadChildren: () =>
       import('./account/account.module').then((x) => x.AccountModule),
+  },
+  {
+    path: 'vacancies',
+    canActivate: [loggedInGuard],
+    loadChildren: () =>
+      import('./vacancy/vacancy.module').then((x) => x.VacancyModule),
   },
 ];
 
